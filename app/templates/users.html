@@ -3,7 +3,8 @@
 {% block content %}
 {% for u in u %}
 <div>
-{{ u.username }}
+{{ u.username }} {{ u.surname }}<br>
+Wezipe: {{ u.workposition }}
 </div>
 {% endfor %}
 {% endblock %}

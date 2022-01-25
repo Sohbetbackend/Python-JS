@@ -7,12 +7,15 @@ from flask_wtf.file import FileField
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
+    surname = StringField('Surname', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Gir')
 
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()], render_kw={'placeholder': "Username"})
+    username = StringField('Username', validators=[DataRequired()])
+    surname = StringField('Surname', validators=[DataRequired()])
+    position = StringField('Position', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])

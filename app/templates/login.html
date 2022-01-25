@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../static/css/login.css">
+  <link rel="icon" href="../static/img/logo.png">
+</head>
+<body>
+
+    <form class="loginForm" method="POST" novalidate>
+      {{ form.hidden_tag() }}
+
+        <h3> Ulgama gir </h3>
+
+        {{ form.username(size=32, placeholder='Username') }}<br>
+
+        {{ form.password(size=32, placeholder='Password') }}<br>
+
+        <div class="btn">
+          {{ form.submit() }}
+        </div>
+
+        <a href="{{ url_for('register') }}"> Taze doret </a>
+    </form>
+</body>
+</html>

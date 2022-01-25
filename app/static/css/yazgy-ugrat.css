@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --color-text: rgb(4, 75, 28);
+    --button-hover: rgb(255, 44, 44);
+}
+
+.pdf {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 5vh;
+  background: lightgray;
+}
+
+.pdf h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text);
+}

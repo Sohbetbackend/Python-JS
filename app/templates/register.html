@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/css/register.css">
+    <link rel="icon" href="../static/img/logo.png">
+    <title>Taze akkaunt</title>
+</head>
+<body>
+
+    <form class="new" method="POST">
+        <h3> Akkaunt doret </h3>
+        {{ form.hidden_tag() }}
+
+                    {{ form.username(size=32, placeholder='Username') }}<br>
+
+
+
+                    {{ form.password(size=32, placeholder="Password") }}<br>
+
+
+
+                    {{ form.password2(size=32, placeholder='Repeat Password') }}<br>
+
+            <div class="btn">
+                {{ form.submit() }}
+            </div>
+    </form>
+
+</body>
+</html>

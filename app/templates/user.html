@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="logoUser">
+    <img src="../static/img/account.png">
+    <div class="accauntData">
+        <h2> {{ user.username }} </h2>
+        <div class="dark">
+            <h4> Wezipe: </h4>
+            <div class="data">
+                <p> Hakim </p>
+            </div>
+        </div>
+
+        <div class="dark">
+            <h4> Sonky giren wagty: </h4>
+            <div class="data">
+                {% if user.last_seen %}
+                <p>{{ moment(user.last_seen).format('LLL') }}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- <div class="dark">
+            <h3> Yene birzat: </h3>
+            <div class="data">
+                <p> Birzat </p>
+            </div>
+        </div> -->
+
+        <div class="online">
+            <h4> Status: </h4>
+            <!-- <div class="blue"></div>  -->
+            <div class="data">
+                <p> Online </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<a type="button" href="{{ url_for('logout') }}"> Ulgamdan chyk </a>
+
+{% endblock %}

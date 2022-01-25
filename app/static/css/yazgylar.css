@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --color-text: rgb(0, 70, 23);
+    --button-hover: rgb(255, 44, 44);
+    --color-background: rgba(0, 82, 0, 0.116);
+}
+
+.yazgylar {
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    /* border: 1px solid black; */
+    /* background: lightgray; */
+}
+
+.yazgylar a {
+    width: 15%;
+    height: 40px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 3%;
+    margin-top: 1vh;
+    float: right;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: .2s;
+    border: 1px solid transparent;
+}
+
+.yazgylar a img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+
+/* .back {
+    width: 95%;
+    height: 40px;
+    margin-left: 2.5%;
+    margin-top: 2%;
+} 
+
+.back img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+} */
+
+.messages {
+    cursor: pointer;
+    /* display: inline-flex; */
+    width: 95%;
+    height: auto;
+    float: left;
+    margin-left: 2.5%;
+    margin-top: 10px;
+    background: var(--color-background);
+    transition: .1s ease-in-out;
+    border: 2px solid transparent;
+}
+
+/* .img {
+    display: flex;
+    width: 6%;
+    height: 100%;
+    float: left;
+    background: lightblue;
+    margin-top: auto;
+}
+
+.img img {
+    width: 60px;
+    height: 60px;
+    padding: 7px auto;
+} */
+
+.yazgylar a:hover {
+    border: 1px solid rgb(0, 70, 23);
+}
+
+.messages h4 {
+    width: 95%;
+    /* height: auto; */
+    /* margin-right: auto; */
+    margin-left: 2.5%;
+    margin-top: 10px;
+    color: var(--color-text);
+    /* background: red; */
+}
+
+.messages p {
+    width: 95%;
+    margin-left: 2.5%;
+    /* color: black; */
+}
+
+.messages:hover  {
+    background: #fff;
+    border: 2px solid var(--color-text);
+}

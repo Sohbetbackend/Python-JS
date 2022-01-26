@@ -10,18 +10,5 @@
     <button class="btn btn-outline-info">Submit</button>
   </form>
 </div>
-<br>
-<br>
-
-
-<div>
-  {% for post in post %}
-  <h2><b>{{ post.data }}</b></h2>
-  <p>Goyulan senesi: {{ moment(post.timestamp).fromNow() }}</p>
-  <a href="/{{ post.id }}/delete" class="btn btn-outline-danger">Pozmak</a>
-  {% endfor %}
-</div>
-
-
 
 {% endblock %}

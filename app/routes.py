@@ -26,15 +26,15 @@ def index():
         db.session.add(post)
         db.session.commit()
 
-        return redirect(url_for('index'))
+        return redirect(url_for('yazgylar'))
 
     post = Post.query.order_by(Post.id.desc())
 
     return render_template('index.html', post=post)
 
 
-@app.route('/<post_id>')
-@app.route('/index/<post_id>')
+@app.route('/<post_id>/download')
+@app.route('/index/<post_id>/download')
 @login_required
 def yazgy(post_id):
     post = Post.query.filter_by(id=post_id).first()
@@ -110,7 +110,8 @@ def users():
     return render_template('users.html', u=u)
 
 
-@app.route('/yazgylar')
+@app.route('/yazgylar', methods=['GET', 'POST'])
 @login_required
 def yazgylar():
-    return render_template('yazgylar.html')
+    post = Post.query.order_by(Post.timestamp.desc())
+    return render_template('yazgylar.html', post=post, user=user)

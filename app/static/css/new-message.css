@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --color-text: rgb(0, 70, 23);
+    --button-hover: rgb(255, 44, 44);
+    --color-background__users: rgba(0, 82, 0, 0.06);
+}
+
+.new-message {
+    width: 90%;
+    float: left;
+    margin-left: 5%;
+    /* background: lightgray; */
+}
+
+.back {
+    width: 95%;
+    height: 40px;
+    margin-left: 2.5%;
+    margin-top: .5%;
+} 
+
+.back img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.users {
+    width: 40%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-left: 5%;
+    margin-top: 2.5%;
+    border-radius: 5px;
+    float: left;
+    background: var(--color-background__users);
+}
+
+.users h4 {
+    width: 95%;
+    height: 30px;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 10px;
+    color: var(--color-text);
+}
+
+.users-list {
+    display: flex;
+    cursor: pointer;
+    width: 95%;
+    height: 40px;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 7px;
+    /* margin-top: 4px; */
+    border-bottom: 1px solid #000;
+    /* background: var(--color-background); */
+}
+
+.users-list h5 {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.users-list p {
+    margin-top: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+.users-list:hover {
+    border-bottom: 1px solid red;
+    color: red;
+}
+
+.type-text {
+    width: 40%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-right: 5%;
+    margin-top: 2.5%;
+    border-radius: 5px;
+    float: right;
+    background: var(--color-background__users);
+}
+
+.type-text h4 {
+    width: 95%;
+    height: 30px;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 10px;
+    color: var(--color-text);
+}
+
+.type-text input[type = text] {
+
+}

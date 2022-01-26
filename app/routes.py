@@ -63,7 +63,6 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data, surname=form.surname.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
             return redirect(url_for('login'))
         login_user(user)
         next_page = request.args.get('next')
@@ -89,7 +88,6 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
         return redirect(url_for('index'))
     return render_template('register.html', title='Register', form=form)
 
@@ -108,6 +106,12 @@ def users():
     u = User.query.all()
 
     return render_template('users.html', u=u)
+
+
+@app.route('/new-message')
+@login_required
+def new_message():
+    return render_template('new-message.html')
 
 
 @app.route('/yazgylar')

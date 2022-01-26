@@ -10,8 +10,16 @@
             <!-- <div class="img">
                 <img src="../static/img/user.png" alt="{{ user }}">
             </div> -->
-            <h4> Dovran (Hakim) </h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quod quia ipsum dolores natus facere dicta neque. In rerum ratione, debitis ea dolor numquam ipsa impedit eligendi quo, recusandae ipsum.</p>
+            {% for post in post %}
+            <h4> {{ current_user.username }} {{ current_user.surname }} </h4>
+            <h6><b>{{ post.data }}</b></h6>
+            <p>Goyulan senesi: {{ moment(post.timestamp).fromNow() }}</p>
+            <a class="button" href="/{{ post.id }}/delete">Pozmak</a>
+            <a class="button" href="/{{ post.id }}/download">Yuklemek</a>
+            {% endfor %}
+
         </div>
+
     </div>
+
 {% endblock %}

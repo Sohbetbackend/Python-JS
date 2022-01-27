@@ -3,10 +3,21 @@
 {% block content %}
 
 <div class="new-message">
+<<<<<<< HEAD
+=======
+    <div class="icons">
+        <div class="back"> <a href="{{ url_for('index') }}"> <img src="../static/img/back.png" alt="Yza"> </a> </div>
+    </div>
+
+>>>>>>> origin/backend
     <form method="POST" action="" enctype="multipart/form-data" class="file-upload">
         <div class="back"> <a href="{{ url_for('index') }}"> <img src="../static/img/back.png" alt="Yza"> </a> </div>
         <input type="file" name="file" id="file" accept="image/*" onchange="previewImage();">
+<<<<<<< HEAD
         <button class="send"> <h5> Ugrat </h5> <img src="../static/img/send.png" alt=""> </button>    
+=======
+        <button class="send"> <h5> Ugrat </h5> <img src="../static/img/send.png" alt=""> </button>
+>>>>>>> origin/backend
     </form>
 
     <div class="preview">

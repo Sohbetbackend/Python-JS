@@ -52,7 +52,7 @@ def yazgylar():
     return render_template('yazgylar.html', post=post, user=user)
 
 
-@app.route('/index/<int:id>/delete', methods=['GET', 'POST'])
+@app.route('/yazgylar/<int:id>/delete', methods=['GET', 'POST'])
 @login_required
 def delete(id):
     post = Post.query.get_or_404(id)
@@ -60,7 +60,7 @@ def delete(id):
     try:
         db.session.delete(post)
         db.session.commit()
-        return redirect(url_for('index'))
+        return redirect(url_for('yazgylar'))
     except:
         return "ERROR"
 
@@ -82,6 +82,12 @@ def login():
     return render_template('login.html', form=form)
 
 
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
         if current_user.is_authenticated:
@@ -94,12 +100,6 @@ def register():
             db.session.commit()
             return redirect(url_for('index'))
         return render_template('register.html', title='Register', form=form)
-
-
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
 
 
 @app.route('/user/<username>')

@@ -6,15 +6,18 @@
 
         <a href="{{ url_for('new_message') }}" class="tazeYaz"> Taze yaz <img src="../static/img/new.png"> </a>
 
+        {% for post in post %}
         <div id="messages" class="messages">
-            {% for post in post %}
             <h4> {{ current_user.username }} {{ current_user.surname }} </h4>
-            <h6><b>{{ post.data }}</b></h6>
-            <p>Goyulan senesi: {{ moment(post.timestamp).fromNow() }}</p>
-            <a class="button" href="/yazgylar/{{ post.id }}/delete">Pozmak</a>
-            <a class="button" href="/yazgylar/{{ post.id }}/download">Yuklemek</a>
-            {% endfor %}
+            <p class="p__name"> {{ post.data }} </p>
+            <p class="p__data"> {{ moment(post.timestamp).fromNow() }}</p>
+
+            <div class="d_d">
+                <p> <a class="_2" href="/yazgylar/{{ post.id }}/download">Yuklemek</a> </p>
+                <p> <a class="_1" href="/yazgylar/{{ post.id }}/delete">Pozmak</a> </p>
+            </div>
         </div>
+        {% endfor %}
 
         <div id="error" class="fatal_error">
             <h3> Bu yerde size gelen hatlar gorkeziler </h3>

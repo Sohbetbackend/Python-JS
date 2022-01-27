@@ -19,14 +19,6 @@ def before_request():
 @app.route('/index', methods=["GET", "POST"])
 @login_required
 def index():
-    if request.method =='POST':
-        file = request.files['file']
-
-        post = Post(data=file.filename, data2=file.read())
-        db.session.add(post)
-        db.session.commit()
-
-        return redirect(url_for('index'))
 
     return render_template('index.html')
 
@@ -34,20 +26,19 @@ def index():
 @app.route('/new-message', methods=['GET', 'POST'])
 @login_required
 def new_message():
-    # if request.method =='POST':
-    #     file = request.files['file']
-    #
-    #     post = Post(data=file.filename, data2=file.read())
-    #     db.session.add(post)
-    #     db.session.commit()
-    #
-    #     return redirect(url_for('yazgylar'))
+    if request.method =='POST':
+        file = request.files['file']
+
+        post = Post(data=file.filename, data2=file.read())
+        db.session.add(post)
+        db.session.commit()
+
+        return redirect(url_for('yazgylar'))
 
     return render_template('new-message.html')
 
 
-@app.route('/<post_id>download', methods=['GET', 'POST'])
-@app.route('/index/<post_id>/download', methods=['GET', 'POST'])
+@app.route('/yazgylar/<post_id>/download')
 @login_required
 def yazgy(post_id):
     post = Post.query.filter_by(id=post_id).first()

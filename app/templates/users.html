@@ -2,8 +2,19 @@
 
 {% block content %}
 {% for u in u %}
-<div>
-{{ u.username }} {{ u.surname }}
+<div class="users-users">
+    <div class="razdel">
+        <h5> Ady: </h5>
+        <h5> Topar: </h5>
+        <h5> Status: </h5>
+    </div>
+
+    <div class="users__list">
+        <h5> {{ u.username }} {{ u.surname }} </h5>
+        <p> Admin </p>
+        <p> Online </p>
+    </div>
+
 </div>
 {% endfor %}
 {% endblock %}

@@ -4,29 +4,13 @@
 
 <div class="new-message">
     <div class="icons">
-        <div class="back"> <img src="../static/img/back.png" alt="Yza"> </div>
-        <div class="send"> <h5> Ugrat </h5>  <img src="../static/img/send.png" alt=""> </div>
+        <div class="back"> <a href="{{ url_for('yazgylar') }}"><img src="../static/img/back.png" alt="Yza"></a></div>
+        <div class="send"> <h5> Ugrat </h5> <img src="../static/img/send.png" alt=""> </div>
     </div>
 
-    <!-- <div class="users">
-        <h4> Ulanyjylar: </h4>
-        {% for user in user %}
-        <div class="users-list">
-            <h5> {{ user.username }} {{ user.surname }} </h5>
-        </div>
-        {% endfor %}
-    </div> -->
-
-
-    <!-- <div class="type-text">
-        <h4> Hat: </h4>
-        <input type="text" id="text">
-    </div> -->
-<!--
-      <form action="/new_message" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <button>Submit</button>
-      </form> -->
-      
+    <form method="POST" action="" enctype="multipart/form-data" class="file-upload">
+        <input type="file" name="file" id="file" accept="image/*" onchange="previewImage();">
+        <img id="preview">
+    </form>
 </div>
 {% endblock %}

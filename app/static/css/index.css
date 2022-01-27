@@ -52,9 +52,16 @@
 }
 
 @media screen and (max-width: 768px) {
+    .index {
+        display: block;
+    }
+
     .blocks {
-        width: 98%;
+        float: left;
+        width: 45%;
         height: 40vh;
+        margin-top: 2%;
+        margin-left: 4%;
     }
     
 }

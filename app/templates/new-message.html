@@ -5,11 +5,11 @@
 <div class="new-message">
     <div class="icons">
         <div class="back"> <a href="{{ url_for('index') }}"> <img src="../static/img/back.png" alt="Yza"> </a> </div>
-        <button class="send"> <h5> Ugrat </h5> <img src="../static/img/send.png" alt=""> </button>
     </div>
 
     <form method="POST" action="" enctype="multipart/form-data" class="file-upload">
         <input type="file" name="file" id="file" accept="image/*" onchange="previewImage();">
+        <button class="send"> <h5> Ugrat </h5> <img src="../static/img/send.png" alt=""> </button>
     </form>
 
     <div class="preview">

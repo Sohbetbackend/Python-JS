@@ -82,24 +82,24 @@ def login():
     return render_template('login.html', form=form)
 
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-        form = RegistrationForm()
-        if form.validate_on_submit():
-            user = User(username=form.username.data, surname=form.surname.data)
-            user.set_password(form.password.data)
-            db.session.add(user)
-            db.session.commit()
-            return redirect(url_for('index'))
-        return render_template('register.html', title='Register', form=form)
-
-
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, surname=form.surname.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)
 
 
 @app.route('/user/<username>')

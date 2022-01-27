@@ -50,9 +50,7 @@
 
 }
 
-button {
-    width: 20%;
-  }
+
 .btn input {
     width: 30%;
     height: 5vh;
@@ -69,9 +67,7 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
-    border: darkgreen;
-  }
+
 .btn input:hover {
     border: 2px solid rgb(61, 145, 50);
     background: rgb(61, 145, 50);

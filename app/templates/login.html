@@ -1,6 +1,10 @@
-{% extends 'base.html' %}
-
-{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../static/css/login.css">
+  <link rel="icon" href="../static/img/logo.png">
+</head>
+<body>
     <form class="loginForm" method="POST" novalidate>
       {{ form.hidden_tag() }}
 
@@ -18,4 +22,5 @@
 
         <a href="{{ url_for('register') }}"> Taze doret </a>
     </form>
-{% endblock %}
+</body>
+</html>

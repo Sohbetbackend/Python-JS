@@ -15,8 +15,8 @@ def before_request():
         db.session.commit()
 
 
-@app.route('/index', methods=['GET', 'POST'])
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=["GET", "POST"])
+@app.route('/index', methods=["GET", "POST"])
 @login_required
 def index():
     if request.method =='POST':
@@ -26,23 +26,42 @@ def index():
         db.session.add(post)
         db.session.commit()
 
-        return redirect(url_for('yazgylar'))
+        return redirect(url_for('index'))
 
-    post = Post.query.order_by(Post.id.desc())
-
-    return render_template('index.html', post=post)
+    return render_template('index.html')
 
 
-@app.route('/<post_id>/download')
-@app.route('/index/<post_id>/download')
+@app.route('/new-message', methods=['GET', 'POST'])
+@login_required
+def new_message():
+    # if request.method =='POST':
+    #     file = request.files['file']
+    #
+    #     post = Post(data=file.filename, data2=file.read())
+    #     db.session.add(post)
+    #     db.session.commit()
+    #
+    #     return redirect(url_for('yazgylar'))
+
+    return render_template('new-message.html')
+
+
+@app.route('/<post_id>download', methods=['GET', 'POST'])
+@app.route('/index/<post_id>/download', methods=['GET', 'POST'])
 @login_required
 def yazgy(post_id):
     post = Post.query.filter_by(id=post_id).first()
     return send_file(BytesIO(post.data2), attachment_filename=post.data, as_attachment=True)
 
 
-@app.route('/<int:id>/delete')
-@app.route('/index/<int:id>/delete')
+@app.route('/yazgylar', methods=['GET', 'POST'])
+@login_required
+def yazgylar():
+    post = Post.query.order_by(Post.id.desc())
+    return render_template('yazgylar.html', post=post, user=user)
+
+
+@app.route('/index/<int:id>/delete', methods=['GET', 'POST'])
 @login_required
 def delete(id):
     post = Post.query.get_or_404(id)
@@ -72,24 +91,24 @@ def login():
     return render_template('login.html', form=form)
 
 
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
-
-
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        user = User(username=form.username.data, surname=form.surname.data)
-        user.set_password(form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        return redirect(url_for('index'))
-    return render_template('register.html', title='Register', form=form)
+        form = RegistrationForm()
+        if form.validate_on_submit():
+            user = User(username=form.username.data, surname=form.surname.data)
+            user.set_password(form.password.data)
+            db.session.add(user)
+            db.session.commit()
+            return redirect(url_for('index'))
+        return render_template('register.html', title='Register', form=form)
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 
 @app.route('/user/<username>')
@@ -106,16 +125,3 @@ def users():
     u = User.query.all()
 
     return render_template('users.html', u=u)
-
-
-@app.route('/new-message')
-@login_required
-def new_message():
-    return render_template('new-message.html')
-
-@app.route('/yazgylar', methods=['GET', 'POST'])
-
-@login_required
-def yazgylar():
-    post = Post.query.order_by(Post.timestamp.desc())
-    return render_template('yazgylar.html', post=post, user=user)

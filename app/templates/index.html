@@ -6,29 +6,44 @@
 
 
     <div class="blocks">
-        <img src="../static/img/users.png">
-        <h4> Ulanyjylar </h4>
-        <p> Ulanyjylaryn sanawyny gor</p>
+        <a href="{{ url_for('users') }}">
+            <img src="../static/img/users.png">
+            <h4> Ulanyjylar </h4>
+            <p> Ulanyjylaryn sanawyny gor </p>
+        </a>
     </div>
 
 
     <div class="blocks">
-        <img src="../static/img/email.png">
-        <h4> Hatlar </h4>
-        <p> Menin hatlarym </p>
+        <a href="{{ url_for('yazgylar') }}">
+            <img src="../static/img/email.png" class="">
+            <h4> Hatlar </h4>
+            <p> Menin hatlarym </p>
+        </a>
     </div>
 
     <div class="blocks">
-        <img src="../static/img/send.png">
-        <h4> Hat ugrat </h4>
-        <p> Taze hat ugrat </p>
+        <a href="{{ url_for('new_message') }}">
+            <img src="../static/img/send.png">
+            <h4> Hat ugrat </h4>
+            <p> Taze hat ugrat </p>
+        </a>
     </div>
 
     <div class="blocks">
-        <img src="../static/img/account.png">
-        <h4> Ulanyjy </h4>
-        <p> Ulanyjy barada maglumat </p>
+        <a href="{{ url_for('user', username=current_user.username) }}">
+            <img src="../static/img/account.png">
+            <h4> Ulanyjy </h4>
+            <p> Ulanyjy barada maglumat </p>
+        </a>
     </div>
+
+
 </div>
+
+      <form action="/new_message" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button>Submit</button>
+      </form>
 
 {% endblock %}

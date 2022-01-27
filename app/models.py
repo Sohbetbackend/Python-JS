@@ -13,6 +13,7 @@ class User(UserMixin, db.Model):
     last_seen = db.Column(db.DateTime, default=datetime.now)
     posts = db.relationship('Post', backref='author', lazy='dynamic')
 
+
     def __repr__(self):
         return '<User {}>'.format(self.username)
 

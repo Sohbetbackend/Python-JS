@@ -7,7 +7,7 @@
 .new {
     display: block;
     width: 50%;
-    height: 70vh;
+    height: 62vh;
     border: 2px solid rgb(14, 87, 0);
     border-radius: 7px;
     background: transparent;
@@ -50,9 +50,6 @@
 
 }
 
-button {
-    width: 20%;
-  }
 .btn input {
     width: 30%;
     height: 5vh;
@@ -69,9 +66,6 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
-    border: darkgreen;
-  }
 .btn input:hover {
     border: 2px solid rgb(61, 145, 50);
     background: rgb(61, 145, 50);

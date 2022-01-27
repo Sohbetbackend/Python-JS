@@ -64,7 +64,7 @@ nav {
 
 .nav-links li {
     list-style-type: none;
-    background: white;
+    /* background: white; */
 }
 
 .nav-links a {
@@ -117,10 +117,11 @@ nav {
     /* border-radius: 40%; */
 }
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
     .nav-links {
-       /* width: 40%; */
+       width: 40%;
        width: 50%;
+       font-size: .5rem;
     }
 
     .hrhr {
@@ -128,15 +129,40 @@ nav {
         float: left;
         margin-left: 5%;
     }
+} */
+
+@media screen and (max-width: 1124px) {
+    .body {
+        overflow: hidden;
+    }
+
+    .hrhr {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .logo {
+        margin-right: auto;
+        margin-left: 5%;
+
+    }
+
+    .nav-links {
+        margin-left: auto;
+        margin-right: 5%;
+        width: 40%;
+        /* min-width: 4vh; */
+    }
+    
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     body {
         overflow: hidden;
     }
 
     .logo {
-        margin-left: 40%;
+        margin-left: 44%;
     }
 
     .logo h4 {
@@ -151,15 +177,15 @@ nav {
     .nav-links {
         /* border-left: 2px solid #fff; */
         position: absolute;
-        right: 0;
+        right: -5%;
         height: 92vh;
-        top: 8vh;
-        background: transparent;
+        top: 10.1vh;
+        background: rgba(1, 77, 4, 0.842);
         /* color:rgb(0, 0, 0); */
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 30%;
+        width: 25%;
         transform: translateX(100%);
         transition: transform .23s ease-in;
     }
@@ -168,11 +194,24 @@ nav {
         opacity: 0;
     }
 
+    .nav-links a {
+        color: white;
+    }
+
+    .nav-links a:hover {
+        color: white;
+        border-bottom: 1px solid #fff;
+    }
+
     .burger {
         display: block;
         /* background: darkblue; */
-        margin-left: 50%;
-        margin-left: 25%;
+        margin-right: 5%;
+    }
+
+    .hrhr {
+        width: 100%;
+        margin-left: 0;
     }
 }
 

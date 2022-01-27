@@ -76,6 +76,7 @@ a[type = button] {
     border: 2px solid darkgray;
     border-radius: 3px;
     font-size: 1rem;
+    z-index: -121;
     transition: .2s;
 }
 

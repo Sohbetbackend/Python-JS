@@ -44,6 +44,35 @@
     width: 30%;
     margin-top: auto;
     margin-right: auto;
-    margin-left: 3%;
+    margin-left: 1.5%;
     margin-bottom: 0;
 }
+
+@media screen and (max-width: 1124px) {
+    .users-users {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .razdel {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .razdel h5 {
+        font-size: 1rem;
+    }
+    
+    .users__list {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .users__list h5 {
+        margin-bottom: 0;
+        width: 30%;
+        margin-left: 1.5%;
+        font-size: 1.1rem;
+    }
+}
+

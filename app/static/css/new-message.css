@@ -73,3 +73,10 @@
     margin-bottom: auto;
     margin-right: auto;
 }
+
+@media screen and (max-width: 1124px) {
+    /* .send {
+        width: 40%;
+    } */
+    
+}

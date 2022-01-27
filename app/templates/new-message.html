@@ -4,13 +4,15 @@
 
 <div class="new-message">
     <div class="icons">
-        <div class="back"> <img src="../static/img/back.png" alt="Yza"> </div>
+        <div class="back"> <a href="{{ url_for('index') }}"> <img src="../static/img/back.png" alt="Yza"> </a> </div>
         <div class="send"> <h5> Ugrat </h5> <img src="../static/img/send.png" alt=""> </div>
     </div>
 
     <div class="file-upload">
         <input type="file" name="file" id="file" accept="image/*" onchange="previewImage();">
+    </div>
         
+    <div class="preview">
         <img id="preview">
     </div>
 </div>

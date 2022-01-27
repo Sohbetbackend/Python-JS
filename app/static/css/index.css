@@ -50,3 +50,11 @@
 .blocks p {
     color: #000;
 }
+
+@media screen and (max-width: 768px) {
+    .blocks {
+        width: 98%;
+        height: 40vh;
+    }
+    
+}

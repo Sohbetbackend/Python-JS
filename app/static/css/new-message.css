@@ -29,7 +29,8 @@
     margin-top: auto;
     margin-bottom: auto;
     margin-right: auto;
-    margin-left: 25%;    
+    margin-left: 25%;  
+    cursor: pointer;
 }
 
 .send {

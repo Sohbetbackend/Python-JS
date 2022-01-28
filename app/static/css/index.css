@@ -24,6 +24,7 @@
     margin-top: 5%;
     margin-bottom: auto;
     transition: .2s;
+    cursor: pointer;
 }
 
 .blocks a {
@@ -49,6 +50,23 @@
 
 .blocks p {
     color: #000;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .index {
+        display: block;
+    }
+
+    .blocks {
+        float: left;
+        width: 40%;
+        cursor: pointer;
+    }
+
+    .blocks:hover {
+        transform: translateY(-5px);
+    }
 }
 
 @media screen and (max-width: 768px) {

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="logoUser">
+    <img src="../static/img/account.png">
+    <div class="accauntData">
+        <h2> {{ user.username }} {{ user.surname }}</h2>
+        <!-- <div class="dark">
+            <h4> Wezipe: </h4>
+            <div class="data">
+                <p> {{ user.position }} </p>
+            </div>
+        </div> -->
+
+        <div class="dark">
+            <h4> {{ _('Soňky giren wagty:') }} </h4>
+            <div class="data">
+                {% if user.last_seen %}
+                <p>{{ moment(user.last_seen).fromNow() }}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="dark">
+            <h3> Yasayan yeri: </h3>
+            <div class="data">
+                <p>
+                  <a class="adres" href="https://maps.google.com/?q">Google map</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="dark">
+            <h4> Topar: </h4>
+            <div class="data">
+
+                <p>{{ user.role.name }}</p>
+                
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% if user == current_user %}
+<a type="button" href="{{ url_for('logout') }}"> {{ _('Ulgamdan çyk') }} </a>
+{% endif %}
+
+{% endblock %}

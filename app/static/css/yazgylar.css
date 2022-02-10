@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --color-text: rgb(0, 70, 23);
+    --button-hover: rgb(255, 44, 44);
+    --color-background__messages: rgba(0, 94, 0, 0.068);
+    --color-background__hover: rgba(0, 54, 0, 0.13);
+}
+
+.yazgylar {
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    /* border: 1px solid black; */
+    /* background: lightgray; */
+}
+
+.yazgylar a {
+    text-decoration: none;
+}
+
+.tazeYaz {
+    width: 10%;
+    height: 40px;
+    text-align: center;
+    /* padding-left: 2px;
+    padding-right: 2px; */
+    margin-right: 3%;
+    margin-top: 1vh;
+    float: right;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: .2s;
+    border: 1px solid transparent;
+}
+
+.tazeYaz img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+
+.tazeYaz:hover {
+    border-bottom: 1px solid rgb(0, 70, 23);
+    color: var(--color-text);
+}
+
+/* .back {
+    width: 95%;
+    height: 40px;
+    margin-left: 2.5%;
+    margin-top: 2%;
+}
+
+.back img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+} */
+
+.messages {
+    cursor: pointer;
+    display: flex;
+    width: 95%;
+    height: auto;
+    min-height: 10px;
+    float: left;
+    margin-left: 2.5%;
+    margin-top: .5%;
+    /* padding: 10px; */
+    background: var(--color-background__messages);
+    border-left: 3px solid transparent;
+    transition: .1s ease-in-out;
+    /* border: 2px solid transparent; */
+}
+
+/* .img {
+    display: flex;
+    width: 6%;
+    height: 100%;
+    float: left;
+    background: lightblue;
+    margin-top: auto;
+}
+
+.img img {
+    width: 60px;
+    height: 60px;
+    padding: 7px auto;
+} */
+
+
+.messages h4 {
+    margin: auto;
+    padding: 10px;
+    color: var(--color-text);
+    /* background: red; */
+}
+
+.messages p {
+    margin: auto;
+    /* color: black; */
+}
+
+.p__name {
+    width: 350px;
+    text-align: center;
+}
+
+.p__data {
+    text-align: center;
+    width: 150px;
+}
+
+.messages:hover  {
+    background: var(--color-background__hover);
+    border-left: 3px solid rgb(0, 49, 0);
+    /* border: 2px solid var(--color-text); */
+}
+
+.d_d {
+    display: flex;
+    width: 20%;
+    margin-right: 0;
+    margin-left: auto;
+    padding: 0;
+    /* background: black; */
+}
+
+.d_d a {
+    padding: 10px 15px;
+}
+
+._1 {
+    color: rgba(255, 0, 0, 0.5);
+}
+
+._2 {
+    color: rgba(0, 0, 255, 0.5)
+}
+
+._1:hover {
+    color: red;
+}
+
+._2:hover {
+    color: blue;
+}
+
+.fatal_error {
+    display: none;
+    width: 100%;
+    height: 70vh;
+    z-index: 100;
+}
+
+.fatal_error h3 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 35vh;
+    color: rgb(0, 70, 23);
+}
+
+
+@media screen and (max-width: 1124px) {
+    .tazeYaz {
+        width: 20%;
+        margin-right: 0;
+    }
+
+    .messages h4 {
+        font-size: 1rem;
+        /* padding: 10; */
+    }
+
+    .messages p {
+        font-size: small;
+    }
+
+    .d_d {
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+
+    .d_d p {
+        width: 100%;
+        height: 50%;
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tazeYaz {
+        width: 20%;
+        margin-right: 2%;
+    }
+
+    .messages h4 {
+        font-size: 1rem;
+        /* padding: 10; */
+    }
+
+    .messages p {
+        font-size: small;
+    }
+
+    .d_d {
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+
+    .d_d p {
+        width: 100%;
+        height: 50%;
+        text-align: right;
+}
+}

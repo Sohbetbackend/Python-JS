@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="yazgylar">
+        <!-- <div class="back"> <img src="../static/img/back.png" alt="Yza"> </div> -->
+
+        <a href="{{ url_for('new_message') }}" class="tazeYaz"> {{ _('Täze ýaz') }} <img src="../static/img/new.png"> </a>
+
+        {% for post in post %}
+        <div id="messages" class="messages">
+
+            <h4><a href="{{ url_for('user', username=post.author.username) }}">{{ post.author.username }}</a></h4>
+            <p class="p__name"> {{ post.data }} </p>
+            <p class="p__data"> {{ moment(post.timestamp).fromNow() }}</p>
+            {% if current_user.can(Permission.ADMIN) %}
+            <div class="d_d">
+                <p> <a class="_2" href="/yazgylar/{{ post.id }}/download">{{ _('Ýüklemek') }}</a> </p>
+                <p> <a class="_1" href="/yazgylar/{{ post.id }}/delete">{{ _('Pozmak') }}</a> </p>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        <div id="error" class="fatal_error">
+            <h3> {{ _('Bu ýerde size gelen hatlar görkeziler') }} </h3>
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../static/css/login.css">
+  <link rel="icon" href="../static/img/logo.png">
+</head>
+<body>
+    <form class="loginForm" method="POST" novalidate>
+      {{ form.hidden_tag() }}
+
+        <h3> {{ _('Ulgama gir') }} </h3>
+
+        {{ form.username(size=32, placeholder='Ulanyjy adyňyz') }}<br>
+
+        {{ form.password(size=32, placeholder='Ulanyjy koduňyz') }}<br>
+
+        <div class="btn">
+          {{ form.submit() }}
+        </div>
+
+        <a href="{{ url_for('register') }}"> {{ _('Täze döret') }} </a>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="users-users">
+    <div class="razdel">
+        <h5> {{ _('Ady:') }} </h5>
+        <h5> {{ _('Topar:') }} </h5>
+        {% if current_user.can(Permission.ADMIN) %}
+        <h5> Admin </h5>
+        {% endif %}
+    </div>
+
+    {% for u in u %}
+    <div class="users__list">
+        <h5><a class="adres__users" href="{{ url_for('user', username=u.username) }}"> {{ u.username }} </a></h5>
+        <p> {{ u.role.name }} </p>
+        {% if current_user.can(Permission.ADMIN) %}
+        <p><a class="adres__status" href="/users/{{ u.id }}/del">Pozmak</a></p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

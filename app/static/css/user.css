@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --color-text: rgb(4, 75, 28);
+    --button-hover: rgb(255, 44, 44);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.adres {
+  color: black;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.adres:hover {
+  color: green;
+}
+
+.logoUser {
+    display: flex;
+    width: 100%;
+    /* border: 3px solid var(--color-text); */
+}
+
+.logoUser img {
+    width: 200px;
+    height: 200px;
+    margin-top: 5vh;
+    margin-left: 5vh;
+}
+
+.accauntData {
+    width: 100%;
+    /* border: 2px solid black; */
+    font-family: 'Poppins', sans-serif;
+    margin-top: 8vh;
+    margin-left: 5vh;
+}
+
+.accauntData h2 {
+    color: var(--color-text);
+    border-bottom: 2px solid var(--color-text);
+}
+
+.online {
+    display: flex;
+    margin-left: 5%;
+    margin-top: .8%;
+}
+
+.data {
+    margin-left: auto;
+    margin-right: 3%;
+    margin-top: .2%;
+}
+
+.dark {
+    margin-top: 0.8%;
+    display: flex;
+    margin-left: 5%;
+    border-bottom: 1px solid #000;
+}
+
+a[type = button] {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    left: 85%;
+    right: 0;
+    margin-top: 3vh;
+    cursor: pointer;
+    width: 130px;
+    height: 8vh;
+    text-decoration: none;
+    background: whitesmoke;
+    color: black;
+    text-align: center;
+    border: 2px solid darkgray;
+    border-radius: 3px;
+    font-size: 1rem;
+    /* z-index: 0; */
+    transition: .2s;
+}
+
+a[type = button]:hover {
+    color: #fff;
+    background: var(--button-hover);
+    border: 2px solid var(--button-hover)
+}
+
+@media screen and (max-width: 1024px) {
+    .logoUser img {
+        width: 170px;
+        height: 170px;
+    }
+
+    .accauntData {
+        margin-top: 4vh;
+        margin-left: 3vh;
+    }
+
+    .accauntData h2 {
+        font-size: x-larger;
+    }
+
+    .online {
+        margin-left: 5%;
+    }
+
+    .data {
+        margin-right: 2%;
+    }
+
+    .dark {
+        margin-left: 5%;
+    }
+
+    a[type = button] {
+        left: 80%;
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .logoUser img {
+      width: 130px;
+      height: 130px;
+      margin-top: 5vh;
+      margin-left: 2vh;
+  }
+
+  .accauntData {
+      margin-top: 2vh;
+      margin-left: 2vh;
+  }
+
+  .accauntData h2 {
+      margin-left: 2%;
+      font-size: x-larger;
+  }
+
+  .online {
+      margin-left: 2%;
+  }
+
+  .data {
+      margin-right: 2%;
+  }
+
+  .dark {
+      margin-left: 2%;
+  }
+
+  a[type = button] {
+      left: 75%;
+      width: 100px;
+  }
+}
+
+@media screen and (max-height: 768px) {
+  a[type = button] {
+      padding-top: 3px;
+      line-height: 15px;
+      height: 40px;
+  }
+}

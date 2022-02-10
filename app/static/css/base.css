@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --color-text: rgb(4, 75, 28);
+    --button-hover: rgb(255, 44, 44);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#245a13, #e8fce594 );
+    background: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 8vh;
+    font-family: 'Poppins', sans-serif;
+    height: 80px;
+    /* opacity: 0.9; */
+}
+
+.logo {
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    /* margin-right: 10px; */
+}
+
+.logo h4 {
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    color: rgb(9, 73, 0);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    margin-top: 3vh;
+    /* background-color: red; */
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-links li {
+    list-style-type: none;
+    /* background: white; */
+}
+
+.nav-links a {
+    transition: .3s;
+    color: rgb(9, 73, 0);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 14px;
+    padding: 4px;
+    border-bottom: 1px solid transparent;
+}
+
+.nav-links a:hover {
+    color: darkred;
+    border-bottom: 1px solid darkred;
+}
+
+
+.ulanyjy {
+    display: flex;
+}
+
+.ulanyjy img {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 20px;
+    height: 20px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 244, 244);
+    background-color: rgb(9, 73, 0);
+    margin: 5px;
+    transition: .7s;
+    border-radius: 2px;
+}
+
+.hrhr {
+    width: 80%;
+    background: rgb(9, 73, 0);
+    height: 2px;
+    margin-left: 10%;
+    /* border-radius: 40%; */
+}
+
+/* @media screen and (max-width: 1024px) {
+    .nav-links {
+       width: 40%;
+       width: 50%;
+       font-size: .5rem;
+    }
+
+    .hrhr {
+        width: 90%;
+        float: left;
+        margin-left: 5%;
+    }
+} */
+
+@media screen and (max-width: 1124px) {
+    .body {
+        overflow: hidden;
+    }
+
+    .hrhr {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .logo {
+        /* z-index: 2000; */
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+    .nav-links {
+        margin-left: auto;
+        margin-right: 5%;
+        width: 40%;
+        /* min-width: 4vh; */
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        overflow: hidden;
+    }
+
+    .logo {
+        margin-left: 2%;
+        /* margin-right: 36%; */
+    }
+
+    /* .logo h4 {
+        display: none;
+    } */
+
+    .logo img {
+        display: block;
+        margin-left: 20%;
+    }
+
+    .nav-links {
+        /* border-left: 2px solid #fff; */
+        position: absolute;
+        margin-top: 0;
+        right: -5%;
+        height: 100vh;
+        top: 0;
+        bottom: 0;
+        background: rgba(1, 77, 4, 0.842);
+        /* color:rgb(0, 0, 0); */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 100;
+        width: 25%;
+        transform: translateX(100%);
+        transition: transform .23s ease-in;
+    }
+
+    .nav-links li {
+        margin-bottom: auto;
+        margin-top: 60%;
+        margin-right: auto;
+        margin-left: auto;
+        /* width: 100%; */
+        /* text-align: center; */
+        opacity: 0;
+    }
+
+    .nav-links a {
+        color: white;
+    }
+
+    .nav-links a:hover {
+        color: white;
+        border-bottom: 1px solid #fff;
+    }
+
+    .burger {
+        display: block;
+        /* background: darkblue; */
+        margin-right: 5%;
+    }
+
+    .hrhr {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background: white;
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background: white;
+}

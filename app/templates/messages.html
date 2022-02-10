@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="yazgylar">
+    <!-- <div class="back"> <img src="../static/img/back.png" alt="Yza"> </div> -->
+
+    {% for msg in messages %}
+    <div id="messages" class="messages">
+
+        <h4> {{ msg.author.username }} {{ msg.author.surname }} </h4>
+        <p class="p__name"> {{ msg.file }} </p>
+        <p class="p__data"> {{ moment(msg.timestamp).fromNow() }}</p>
+
+        <div class="d_d">
+            <p> <a class="_2" href="/messages/{{ msg.id }}/upload">{{ _('Ýüklemek') }}</a> </p>
+            <p> <a class="_1" href="/messages/{{ msg.id }}/remove">{{ _('Pozmak') }}</a> </p>
+        </div>
+    </div>
+    {% endfor %}
+    <div id="error" class="fatal_error">
+        <h3> {{ _('Bu ýerde size gelen hatlar görkeziler') }} </h3>
+    </div>
+
+</div>
+{% endblock %}

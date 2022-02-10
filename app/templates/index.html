@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="index">
+
+
+    <div class="blocks">
+        <a href="{{ url_for('users') }}">
+            <img src="../static/img/users.png">
+            <h4> {{ _('Ulanyjylar') }} </h4>
+            <p> {{ _('Ulanyjylaryň sanawyny gör') }} </p>
+        </a>
+    </div>
+
+    {% if current_user.can(Permission.MODERATE) %}
+    <div class="blocks">
+        <a href="{{ url_for('yazgylar') }}">
+            <img src="../static/img/email.png" class="">
+            <h4> {{ _('Hatlar') }} </h4>
+            <p> {{ _('Meniň hatlarym') }} </p>
+        </a>
+    </div>
+
+    <div class="blocks">
+        <a href="{{ url_for('new_message') }}">
+            <img src="../static/img/send.png">
+            <h4> {{ _('Hat ugrat') }} </h4>
+            <p> {{ _('Täze hat ugrat') }} </p>
+        </a>
+    </div>
+    {% endif %}
+    <div class="blocks">
+        <a href="{{ url_for('user', username=current_user.username) }}">
+            <img src="../static/img/account.png">
+            <h4> {{ _('Ulanyjy') }} </h4>
+            <p> {{ _('Ulanyjy barada maglumat') }} </p>
+        </a>
+    </div>
+
+
+</div>
+
+      <!-- <form action="/new_message" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button>Submit</button>
+      </form> -->
+{% endblock %}
